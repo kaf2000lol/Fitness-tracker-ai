@@ -4,7 +4,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "fitness tracker running"
+    return render_template("index.html")  # serves templates/index.html
+@app.route("/workout")
+def workout():
+    return render_template("workout.html")  # serves templates/workout.html
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
